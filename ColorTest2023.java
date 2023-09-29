@@ -25,10 +25,6 @@
         telemetry.addData("Green", colorsensor.green());
         telemetry.update();
         if (colorsensor.red() > 200) {
-          BackL.setPower(0.1);
-          BackR.setPower(-0.1);
-          FrontL.setPower(0.1);
-          FrontR.setPower(-0.1);
           BackL.setPower(0);
           BackR.setPower(0);
           FrontL.setPower(0);
