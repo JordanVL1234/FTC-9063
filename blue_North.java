@@ -96,6 +96,7 @@ public class blue_North extends LinearOpMode {
                 telemetry.addData("Blue", colorsensor.blue());
                 telemetry.addData("Green", colorsensor.green());
                 telemetry.update(); {
+                    
                     if (colorsensor.blue() > (colorsensor.red()+colorsensor.green())/1.5 && SeenColor == 0) {
                         // (Drop pixel);
                         Move_Backwards(int Seconds);
