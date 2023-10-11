@@ -99,24 +99,24 @@ public class blue_North extends LinearOpMode {
                     
                     if (colorsensor.blue() > (colorsensor.red()+colorsensor.green())/1.5 && SeenColor == 0) {
                         // (Drop pixel);
-                        Move_Backwards(int Seconds);
-                        TurnLeftInPlace(int Seconds);
-                        Move_Forward(int Seconds);
+                        Move_Backwards(int 5000);
+                        TurnLeftInPlace(int 5000);
+                        Move_Forward(int 5000);
                         System.exit(1)
                     } else {
-                        StrafeLeft(int Seconds);
+                        StrafeLeft(int 5000);
                     } if (colorsensor.blue() > (colorsensor.red()+colorsensor.green())/1.5 && SeenColor == 0) {
                         // (Drop pixel);
-                        Move_Backwards(int Seconds);
-                        TurnLeftInPlace(int Seconds);
-                        Move_Forward(int Seconds);
+                        Move_Backwards(int 5000);
+                        TurnLeftInPlace(int 5000);
+                        Move_Forward(int 5000);
                         System.exit(1)
                     } else {
-                        StrafeLeft(int Seconds);
+                        StrafeLeft(int 5000);
                         // (Drop pixel);
-                        Move_Backwards(int Seconds);
-                        TurnLeftInPlace(int Seconds);
-                        Move_Forward(int Seconds);
+                        Move_Backwards(int 5000);
+                        TurnLeftInPlace(int 5000);
+                        Move_Forward(int 5000);
                         System.exit(1)
                             }
                 }
