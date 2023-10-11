@@ -105,7 +105,6 @@ public class blue_North extends LinearOpMode {
                         System.exit(1)
                     } else {
                         StrafeLeft(int Seconds);
-                        // (Scan for cone);
                     } if (colorsensor.blue() > (colorsensor.red()+colorsensor.green())/1.5 && SeenColor == 0) {
                         // (Drop pixel);
                         Move_Backwards(int Seconds);
