@@ -14,9 +14,7 @@ public class blue_North extends LinearOpMode {
     DcMotor BackL, BackR, FrontL, FrontR;
     LightSensor colorsensor_LightSensor;
     ColorSensor colorsensor;
-
-    // This function is executed when this Op Mode is selected from the Driver Station.
-    @Override
+    
     public void runOpMode() {
         double OgMotorSpeed = 0.2;
         double DyMotorSpeed;
@@ -27,30 +25,98 @@ public class blue_North extends LinearOpMode {
         FrontR = hardwareMap.get(DcMotor.class, "FrontR");
         colorsensor_LightSensor = hardwareMap.get(LightSensor.class, "colorsensor");
         colorsensor = hardwareMap.get(ColorSensor.class, "colorsensor");
-        waitForStart(); {
-         // (Move);
-         while (opModeIsActive()) { // In a work of progress
-   telemetry.addData("Light Detected", colorsensor_LightSensor.getLightDetected());
-   telemetry.addData("Red", colorsensor.red());
-   telemetry.addData("Blue", colorsensor.blue());
-   telemetry.addData("Green", colorsensor.green());
-   telemetry.update(); {
-    if (colorsensor.red() > (colorsensor.blue()+colorsensor.green())/1.5 && SeenColor == 0) {
-     // (Drop pixel);
-     // (Turn 90 degrees left);
-     System.exit(1)
-    } else {
-     // (Turn 90 degrees left);
-     // (Scan for cone);
-      } if (colorsensor.red() > (colorsensor.blue()+colorsensor.green())/1.5 && SeenColor == 0) {
-       // (Drop pixel);
-       // (Turn 180 degrees left);
-       System.exit(1)
-    } else {
-     // (Turn 180 degrees left);
-     // (Drop pixel);
-     System.exit(1)
-      }
-   }
-  }
+        
+        private void Move_Forward(int Seconds) {
+            FrontL.setPower(-0.2);
+            FrontR.setPower(0.2);
+            BackL.setPower(-0.2);
+            BackR.setPower(0.2);
+            sleep(Seconds);
+            FrontL.setPower(0);
+            FrontR.setPower(0);
+            BackL.setPower(0);
+            BackR.setPower(0); }
+        private void Move_Backwards(int Seconds) {
+            FrontL.setPower(0.2);
+            FrontR.setPower(-0.2);
+            BackL.setPower(0.2);
+            BackR.setPower(-0.2);
+            sleep(Seconds);
+            FrontL.setPower(0);
+            FrontR.setPower(0);
+            BackL.setPower(0);
+            BackR.setPower(0); }
+        private void TurnLeftInPlace(int Seconds) {
+            FrontL.setPower(0.2);
+            FrontR.setPower(0.2);
+            BackL.setPower(0.2);
+            BackR.setPower(0.2);
+            sleep(Seconds);
+            FrontL.setPower(0);
+            FrontR.setPower(0);
+            BackL.setPower(0);
+            BackR.setPower(0); }
+        private void TurnRightInPlace(int Seconds) {
+            FrontL.setPower(-0.2);
+            FrontR.setPower(-0.2);
+            BackL.setPower(-0.2);
+            BackR.setPower(-0.2);
+            sleep(Seconds);
+            FrontL.setPower(0);
+            FrontR.setPower(0);
+            BackL.setPower(0);
+            BackR.setPower(0); }
+        private void StrafeRight(int Seconds) {
+            FrontL.setPower(-0.2);
+            FrontR.setPower(-0.2);
+            BackL.setPower(0.2);
+            BackR.setPower(0.2);
+            sleep(Seconds);
+            FrontL.setPower(0);
+            FrontR.setPower(0);
+            BackL.setPower(0);
+            BackR.setPower(0); }
+        private void StrafeLeft(int Seconds) {
+            FrontL.setPower(0.2);
+            FrontR.setPower(0.2);
+            BackL.setPower(-0.2);
+            BackR.setPower(-0.2);
+            sleep(Seconds);
+            FrontL.setPower(0);
+            FrontR.setPower(0);
+            BackL.setPower(0);
+            BackR.setPower(0);
+
+            waitForStart();
+            if (opModeIsActive()) {
+                // (Move forwards);
+                while (opModeIsActive()) { // In a work of progress
+                telemetry.addData("Light Detected", colorsensor_LightSensor.getLightDetected());
+                telemetry.addData("Red", colorsensor.red());
+                telemetry.addData("Blue", colorsensor.blue());
+                telemetry.addData("Green", colorsensor.green());
+                telemetry.update(); {
+                    if (colorsensor.red() > (colorsensor.blue()+colorsensor.green())/1.5 && SeenColor == 0) {
+                        // (Drop pixel);
+                        // (Go backwards);
+                        // (Turn 90 degrees left);
+                        System.exit(1)
+                    } else {
+                        // (Turn 90 degrees left);
+                        // (Scan for cone);
+                    } if (colorsensor.red() > (colorsensor.blue()+colorsensor.green())/1.5 && SeenColor == 0) {
+                        // (Drop pixel);
+                        // (Go backwards);
+                        // (Turn 180 degrees left);
+                        System.exit(1)
+                    } else {
+                        // (Turn 180 degrees left);
+                        // (Drop pixel);
+                        System.exit(1)
+                            }
+                }
+                }
+            }
+        }
 }
+
