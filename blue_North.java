@@ -89,29 +89,34 @@ public class blue_North extends LinearOpMode {
 
             waitForStart();
             if (opModeIsActive()) {
-                // (Move forwards);
+                Move_Forward(int Seconds) 
                 while (opModeIsActive()) { // In a work of progress
                 telemetry.addData("Light Detected", colorsensor_LightSensor.getLightDetected());
                 telemetry.addData("Red", colorsensor.red());
                 telemetry.addData("Blue", colorsensor.blue());
                 telemetry.addData("Green", colorsensor.green());
                 telemetry.update(); {
-                    if (colorsensor.red() > (colorsensor.blue()+colorsensor.green())/1.5 && SeenColor == 0) {
+                    if (colorsensor.blue() > (colorsensor.red()+colorsensor.green())/1.5 && SeenColor == 0) {
                         // (Drop pixel);
-                        // (Go backwards);
-                        // (Turn 90 degrees left);
+                        Move_Backwards(int Seconds);
+                        TurnLeftInPlace(int Seconds);
+                        Move_Forward(int Seconds);
                         System.exit(1)
                     } else {
-                        // (Turn 90 degrees left);
+                        StrafeLeft(int Seconds);
                         // (Scan for cone);
-                    } if (colorsensor.red() > (colorsensor.blue()+colorsensor.green())/1.5 && SeenColor == 0) {
+                    } if (colorsensor.blue() > (colorsensor.red()+colorsensor.green())/1.5 && SeenColor == 0) {
                         // (Drop pixel);
-                        // (Go backwards);
-                        // (Turn 180 degrees left);
+                        Move_Backwards(int Seconds);
+                        TurnLeftInPlace(int Seconds);
+                        Move_Forward(int Seconds);
                         System.exit(1)
                     } else {
-                        // (Turn 180 degrees left);
+                        StrafeLeft(int Seconds);
                         // (Drop pixel);
+                        Move_Backwards(int Seconds);
+                        TurnLeftInPlace(int Seconds);
+                        Move_Forward(int Seconds);
                         System.exit(1)
                             }
                 }
