@@ -61,9 +61,11 @@ private DcMotor BackL;
    Move_Forward(1000);
     if (Blue() == true) {
       // Pick up item and whatever
-    } else {
-   StrafeLeft(1000);
-   Move_Forward(1000);
+    } 
+    else {
+     StrafeLeft(1000);
+     Move_Forward(1000);
+    }
    if (Blue() == true) {
      // Pick up item and whatever
    } else {
@@ -71,8 +73,10 @@ private DcMotor BackL;
    Move_Forward(1000); }
       // Pick up item since we are in the final spot
     }
-  
-   
+ }
+
+
+  while (opModeIsActive()) {
     // Put loop process here
     Telementry.update();
     telemetry.addData("Light Detected", colorsensor_LightSensor.getLightDetected());
@@ -80,11 +84,8 @@ private DcMotor BackL;
     telemetry.addData("Blue", colorsensor.blue());
     telemetry.addData("Green", colorsensor.green());
     telemetry.update();
+  
 
-
-
-    
- 
 
  /**
   * Describe this Function...
