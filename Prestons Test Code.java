@@ -88,8 +88,7 @@ private DcMotor BackL;
      BackR.setPower(0.0);
      SeenColor =1;
      sleep(1000);
-     }
-     
+      }
     }
    }
   }
