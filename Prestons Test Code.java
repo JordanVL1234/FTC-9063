@@ -150,7 +150,7 @@ private void StrafeRight(int Seconds) {
    sleep(Seconds);
    FrontL.setPower(0.0);
    FrontR.setPower(0.0);
-   BackLL.setPower(0.0);
+   BackL.setPower(0.0);
    BackR.setPower(0.0);
   
   }
@@ -166,6 +166,20 @@ private void StrafeRight(int Seconds) {
    FrontR.setPower(0.0);
    BackL.setPower(0.0);
    BackR.setPower(0.0);
-   
+  }
+    
+// private void ClawIntake(int Seconds) {
+//     IntakeSpinner.setPower(0.5);
+//     Conveyor.setPower(0.5);
+//     TopClaw.setPower(0.0);
+//     MovementShifter.setPower(0.0);
+//     sleep(Seconds);
+//     IntakeSpinner.setPower(0.0);
+//     Conveyor.setPower(0.0);
+//     TopClaw.setPower(0.0);
+//     MovementShifter.setPower(0.0); 
+// }
+
+
   }
 }
