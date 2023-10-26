@@ -26,12 +26,12 @@ private DcMotor FrontR;
 private DcMotor FrontL;
 private DcMotor BackR;
 private DcMotor BackL;
+private ServoMotor ServoUp;
 
  /**
  * This Function is executed when this Op Mode is selected from the Driver Station
  */
  
- @Override
  public void runOpMode() {
   FrontR = hardwareMap.get(DcMotor.class, "FrontR");
   FrontL = hardwareMap.get(DcMotor.class, "FrontR");
@@ -39,12 +39,8 @@ private DcMotor BackL;
   BackL = hardwareMap.get(DcMotor.class, "BackL");
   colorsensor_LightSensor = hardwareMap.get(LightSensor.class, "colorsensor");
   colorsensor = hardwareMap.get(ColorSensor.class, "colorsensor");
-  telementry.addData("Light Detected", colorsensor_LightSensor.getLightDetected());
-  telementry.addData("Red", colorsensor());
-  telementry.addData("Blue", colorsensor());
-  telementry.addData("Green", colorsensor());
-  telementry.update();
-  // Put initialization process here
+ 
+   // Put initialization process here
   waitforstart();
   /* These are some specifications for the turns, and only to be used in turning functions-
   Might update though**
@@ -77,6 +73,7 @@ private DcMotor BackL;
 
 
   while (opModeIsActive()) {
+
     // Put loop process here
     Telementry.update();
     telemetry.addData("Light Detected", colorsensor_LightSensor.getLightDetected());
@@ -85,8 +82,6 @@ private DcMotor BackL;
     telemetry.addData("Green", colorsensor.green());
     telemetry.update();
   
-
-
  /**
   * Describe this Function...
   */
@@ -168,17 +163,7 @@ private void StrafeRight(int Seconds) {
    BackR.setPower(0.0);
   }
     
-// private void ClawIntake(int Seconds) {
-//     IntakeSpinner.setPower(0.5);
-//     Conveyor.setPower(0.5);
-//     TopClaw.setPower(0.0);
-//     MovementShifter.setPower(0.0);
-//     sleep(Seconds);
-//     IntakeSpinner.setPower(0.0);
-//     Conveyor.setPower(0.0);
-//     TopClaw.setPower(0.0);
-//     MovementShifter.setPower(0.0); 
-// }
+
 
 
   }
