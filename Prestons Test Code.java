@@ -22,6 +22,12 @@ public class PrestonTestCode extends LinearOpMode {
    Right
 }
 
+enum TestForColor {
+        Red,
+        Blue,
+        Green,
+}
+
 private DcMotor FrontR;
 private DcMotor FrontL;
 private DcMotor BackR;
@@ -162,6 +168,30 @@ private void StrafeRight(int Seconds) {
    BackL.setPower(0.0);
    BackR.setPower(0.0);
   }
+
+private boolean TestColor(TestForColor State) {
+
+  case Red:
+if (colorsensor.red() > colorsensor.blue() && (colorsensor.red() > colorsensor.green())) {
+
+  return true;
+  break;
+
+  case Blue:
+  if (colorsensor.blue() > colorsensor.red() && (colorsensor.blue() > colorsensor.green())) {
+
+    return true;
+    break;
+
+    case Green::
+      if (colorsensor.green() > colorsensor.red() && (colorsensor.green() > colorsensor.blue())) {
+
+      return true;
+      break;
+    }
+  }
+}
+}
     
 
 
