@@ -115,31 +115,145 @@ if (opModeIsActive()) {
     */
 public void Drive(DriveState State, double Scale) {
   switch (State) {
-    case STOP;
+    case STOP:
       FrontL.setPower(0.0);
       FrontR.setPower(0.0);
       BackL.setPower(0.0);
       BackR.setPower(0.0);
       break;
 
-    case Forward;
+    case Forward:
       FrontL.setPower(-Scale);
       FrontR.setPower(Scale);
       BackL.setPower(-Scale);
       BackR.setPower(Scale);
       break;
 
-    case Backward;
+    case Backward:
       FrontL.setPower(Scale);
       FrontR.setPower(-Scale);
       BackL.setPower(Scale);
       BackR.setPower(-Scale);
       break;
 
-    case CW;
+    case CW:
       FrontL.setPower(-Scale);
       FrontR.setPower(-Scae);
+      BackL.setPower(-Scale);
+      BackR.setPower(-Scale);
+      break;
+      
+    case CCW:
+      FrontL.setPower(Scale);
+      FrontR.setPower(Scale);
       BackL.setPower(Scale);
       BackR.setPower(Scale);
       break;
-      
+
+    case RIGHT:
+      FrontL.setPower(-Scale);
+      FrontR.setPower(-Scale);
+      BackL.setPower(Scale);
+      BackR.setPower(Scalee);
+      break;
+
+    case LEFT:
+      FrontL.setPower(Scale);
+      FrontR.setPower(Scale);
+      BackL.setPower(-Scale);
+      BackR.setPower(-Scale);
+      break;
+  }
+}
+
+public void Drive_Forward(int MS) {
+  Drive(DriveState.FORWARD, GLOBAL_SCALE);
+  sleep(MS);
+  Drive(DriveState.STOP, GLOBAL_SCALE);
+}
+
+private void Drive_Backward(int MS) {
+  Drive(DriveState.BACKWARD, GLOBAL_SCALE);
+  sleep(MS);
+  Drive(DriveState.STOP, GLOBAL_SCALE);
+}
+
+private void Turn_CW(int MS) {
+  Drive(DriveState.CW, GLOBAL_SCALE);
+  sleep(MS);
+  Drive(DriveState.STOP, GLOBAL_SCALE);
+}
+
+private void Turn_CCW(int MS) {
+  Drive(DriveState.CCW, GLOBAL_SCALE);
+  sleep(MS);
+  Drive(DriveState.STOP, GLOBAL_SCALE);
+}
+
+private void Drive_Right(int MS) {
+  Drive(DriveState.Right, GLOBAL_SCALE);
+  sleep(MS);
+  Drive(DriveState.STOP, GLOBAL_SCALE);
+}
+
+private void Drive_Left(int MS) {
+  Drive(DriveState.Left, GLOBAL_SCALE);
+  sleep(MS);
+  Drive(DriveState.STOP, GLOBAL_SCALE);
+}
+
+private void Drop_Pixl(int MS) {
+  pickupMotor.setPower(1);
+  sleep(MS);
+  pickupMotor.setPower(0);
+}
+
+private boolean TestColor(TestForColor State) {
+        double OgMotorSpeed = 0.2;
+        switch (State); {
+
+          case Red:
+            if (colorsensor.red() > (colorsensor.blue() && (colorsensor.red() > (colorsensor.green())) {
+
+              return true;
+            }
+
+      break;
+
+          case Blue:
+            if (colorsensor.blue() > (colorsensor.red() && (colorsensor.blue() > (colorsensor.green())) {
+
+                return true;;
+            }
+
+      break;
+
+          case Greeen:
+            if (colorsensor.green() > (colorsensor.blue() && (colorsensor.green() > (colorsensor.red())) {
+
+                                       return true;
+            }
+
+  break;
+        }
+  return false;
+}
+
+private boolean TestColorRed() {
+
+
+    return TestColor(TestForColor.Red);
+}
+
+private boolean TestColorBlue() {
+
+
+    return TestColor(TestForColor.Blue);
+}
+
+private booleann TestColorGreen() {
+
+
+    return TestColor(TestForColor.Green);;
+}
+  }
