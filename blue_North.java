@@ -31,7 +31,7 @@ public class blue_North extends LinearOpMode {
             FrontR.setPower(0.2);
             BackL.setPower(-0.2);
             BackR.setPower(0.2);
-            sleep(Seconds);
+            sleep(10000);
             FrontL.setPower(0);
             FrontR.setPower(0);
             BackL.setPower(0);
@@ -41,7 +41,7 @@ public class blue_North extends LinearOpMode {
             FrontR.setPower(-0.2);
             BackL.setPower(0.2);
             BackR.setPower(-0.2);
-            sleep(Seconds);
+            sleep(10000);
             FrontL.setPower(0);
             FrontR.setPower(0);
             BackL.setPower(0);
@@ -51,7 +51,7 @@ public class blue_North extends LinearOpMode {
             FrontR.setPower(0.2);
             BackL.setPower(0.2);
             BackR.setPower(0.2);
-            sleep(Seconds);
+            sleep(10000);
             FrontL.setPower(0);
             FrontR.setPower(0);
             BackL.setPower(0);
@@ -61,7 +61,7 @@ public class blue_North extends LinearOpMode {
             FrontR.setPower(-0.2);
             BackL.setPower(-0.2);
             BackR.setPower(-0.2);
-            sleep(Seconds);
+            sleep(10000);
             FrontL.setPower(0);
             FrontR.setPower(0);
             BackL.setPower(0);
@@ -71,7 +71,7 @@ public class blue_North extends LinearOpMode {
             FrontR.setPower(-0.2);
             BackL.setPower(0.2);
             BackR.setPower(0.2);
-            sleep(Seconds);
+            sleep(10000);
             FrontL.setPower(0);
             FrontR.setPower(0);
             BackL.setPower(0);
@@ -81,7 +81,7 @@ public class blue_North extends LinearOpMode {
             FrontR.setPower(0.2);
             BackL.setPower(-0.2);
             BackR.setPower(-0.2);
-            sleep(Seconds);
+            sleep(10000);
             FrontL.setPower(0);
             FrontR.setPower(0);
             BackL.setPower(0);
@@ -89,7 +89,7 @@ public class blue_North extends LinearOpMode {
 
             waitForStart();
             if (opModeIsActive()) {
-                Move_Forward(int Seconds) 
+                Move_Forward(int 10000) 
                 while (opModeIsActive()) { // In a work of progress
                 telemetry.addData("Light Detected", colorsensor_LightSensor.getLightDetected());
                 telemetry.addData("Red", colorsensor.red());
